@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Настройки интеграции с редмайном</title>
+	<style>
+		th {
+			width: 200px;
+			text-align: right;
+		}
+		
+		td {
+			width: 300px;
+		}
+		
+		input {
+			width: 300px;
+		}
+		
+		#status {
+			padding: 10px;
+			margin: 10px;
+			border: 1px solid #666;
+			background-color: #face9d;
+			display: none;
+		}
+		
+		#saveWrapper {
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+
+<div id="status"></div>
+
+<fieldset>
+	<legend>Настройки редмайна</legend>
+	
+	<table>
+		<tr>
+			<th>Ссылка на корень проекта*</th>
+			<td><input type="text" id="redmineBase" /></td>
+		</tr>
+		<tr>
+			<th>Идентификатор проекта*</th>
+			<td><input type="text" id="redmineProject" /></td>
+		</tr>
+	</table>
+</fieldset>
+
+<fieldset>
+	<legend>Настройки пользователя</legend>
+	
+	<table>
+		<tr>
+			<th>API key</th>
+			<td><input type="text" id="userApiKey" /></td>
+		</tr>
+		<tr>
+			<th>Идентификатор фильтра*</th>
+			<td><input type="text" id="userQuery" /></td>
+		</tr>
+	</table>
+</fieldset>
+
+<div id="saveWrapper">
+	<button id="save">Сохранить изменения</button>
+</div>
+
+<script src="options.js"></script>
+</body>
+</html>
