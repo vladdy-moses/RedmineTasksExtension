@@ -42,7 +42,7 @@ function taskRowClick() {
 	chrome.windows.create({url: chrome.extension.getURL("dialog.html#" + this.dataset.id), type: "popup", focused: true});
 }
 
-function restore_options() {
+function restoreOptions() {
 	chrome.storage.sync.get({
 		redmineBase: 'http://redmine.ais.local/',
 		redmineProject: 'hm-web',
@@ -53,4 +53,4 @@ function restore_options() {
 		getTasks();
 	});
 }
-document.addEventListener('DOMContentLoaded', restore_options);
+document.addEventListener('DOMContentLoaded', restoreOptions);

@@ -1,4 +1,4 @@
-function save_options() {
+function saveOptions() {
 	var redmineBase = document.getElementById('redmineBase').value;
 	var redmineProject = document.getElementById('redmineProject').value;
 	var userApiKey = document.getElementById('userApiKey').value;
@@ -19,7 +19,7 @@ function save_options() {
 	});
 }
 
-function restore_options() {
+function restoreOptions() {
 	chrome.storage.sync.get({
 		redmineBase: 'http://redmine.ais.local/',
 		redmineProject: 'hm-web',
@@ -32,5 +32,5 @@ function restore_options() {
 		document.getElementById('userQuery').value = items.userQuery;
 	});
 }
-document.addEventListener('DOMContentLoaded', restore_options);
-document.getElementById('save').addEventListener('click', save_options);
+document.addEventListener('DOMContentLoaded', restoreOptions);
+document.getElementById('save').addEventListener('click', saveOptions);

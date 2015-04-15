@@ -1,19 +1,28 @@
 {
-  "manifest_version": 2,
+	"manifest_version": 2,
 
-  "name": "Redmine integration for AIS.HM",
-  "description": "Это расширение создано для интеграции разрабатываемых задач из редмайна для АИС Объектовый учёт",
-  "version": "1.0",
-  "options_page": "options.html",
+	"name": "Redmine integration for AIS.HM",
+	"description": "Это расширение создано для интеграции разрабатываемых задач из редмайна для АИС Объектовый учёт",
+	"version": "1.0",
+	"options_page": "options.html",
 
-  "browser_action": {
-    "default_icon": "icon.png",
-    "default_popup": "popup.html"
-  },
-  "permissions": [
-    "activeTab",
-	"storage",
-    "http://redmine.ais.local/*",
-	"http://redmine.aisgorod.ru/*"
-  ]
+	"icons": {
+		"48": "icon/icon48.png",
+		"128": "icon/icon128.png"
+	},
+	
+	"browser_action": {
+		"default_icon": {
+			"19": "icon/icon19.png",
+			"38": "icon/icon38.png"
+		},
+		"default_popup": "popup.html"
+	},
+	
+	"permissions": [
+		"activeTab",
+		"storage",
+		"http://redmine.ais.local/*",
+		"http://redmine.aisgorod.ru/*"
+	]
 }
