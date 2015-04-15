@@ -20,7 +20,7 @@ function printTasks(tasksArray) {
 	var out = '<table>';
 	var i;
 	for(i = 0; i < tasksArray.issues.length; i++) {
-		out += '<tr>';
+		out += '<tr data-id="' + tasksArray.issues[i].id + '">';
 		out += '<td class="taskId">' + tasksArray.issues[i].id + '</td>';
 		out += '<td class="taskSubject">' + tasksArray.issues[i].subject + '</td>';
 		out += '<td class="taskStatus">' + tasksArray.issues[i].status.name + '</td>';
@@ -29,6 +29,17 @@ function printTasks(tasksArray) {
 	}
 	out += '</table>';
 	document.getElementById("tasksWrapper").innerHTML = out;
+	
+	var rows = document.getElementById("tasksWrapper").getElementsByTagName('tr');
+	for(i = 0; i < rows.length; i++) {
+		rows[i].addEventListener("click", taskRowClick);
+	};
+	
+	console.log(rows);
+}
+
+function taskRowClick() {
+	chrome.windows.create({url: chrome.extension.getURL("dialog.html#" + this.dataset.id), type: "popup", focused: true});
 }
 
 function restore_options() {
