@@ -43,12 +43,33 @@
 			text-align: center;
 			white-space: nowrap;
 		}
+		
+		#stopAllButton {
+			display: block;
+			background: linear-gradient(to bottom, rgba(255,175,75,1) 0%,rgba(255,146,10,1) 100%);
+			color: #f0f0f0;
+			border: 3px solid #FF7400;
+			text-decoration: none;
+			font-size: 1.7em;
+			font-weight: bold;
+			font-family: Arial;
+			text-align: center;	
+			margin: 5px 0;
+			padding: 5px;
+		}
+		
+		#stopAllButton:hover {
+			color: #fff;
+		}
 	</style>
 	<script src="popup.js"></script>
 </head>
 <body>
 
 <div id="tasksWrapper"></div>
+<div id="buttonWrapper">
+	<a href="#" id="stopAllButton">Остановить работу</a>
+</div>
 
 </body>
 </html>

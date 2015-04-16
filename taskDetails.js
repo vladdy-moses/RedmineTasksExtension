@@ -35,6 +35,10 @@ function taskLoadData(taskInfo) {
 	document.getElementById("test").innerHTML += intervalTable;
 }
 
+function actionButtonClick() {
+	alert(this.innerHTML);
+}
+
 function restoreOptions() {
 	var configData = {};
 	configData[configKey] = false;
@@ -51,3 +55,8 @@ function restoreOptions() {
 }
 document.addEventListener('DOMContentLoaded', restoreOptions);
 document.getElementById('testDataFill').addEventListener('click', testDataFill);
+
+var actionLinks = document.getElementById('actionButtons').getElementsByTagName('a');
+for(i = 0; i < actionLinks.length; i++) {
+	actionLinks[i].addEventListener("click", actionButtonClick);
+};
