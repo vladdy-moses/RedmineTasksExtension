@@ -39,7 +39,15 @@ function printTasks(tasksArray) {
 }
 
 function taskRowClick() {
-	chrome.windows.create({url: chrome.extension.getURL("dialog.html#" + this.dataset.id), type: "popup", focused: true});
+	var windowProperties = {
+		url: chrome.extension.getURL("taskDetails.html#" + this.dataset.id),
+		width: 500,
+		height: 400,
+		type: 'popup',
+		focused: true
+	};
+	
+	chrome.windows.create(windowProperties);
 }
 
 function restoreOptions() {

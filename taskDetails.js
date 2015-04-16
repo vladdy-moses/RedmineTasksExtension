@@ -26,6 +26,15 @@ function testDataFill() {
 	});
 }
 
+function taskLoadData(taskInfo) {
+	var intervalTable = '<table border="1">';
+	for(i = 0; i < taskInfo.interval.length; i++) {
+		intervalTable += '<tr><td>' + (1+i) + '</td><td>' + taskInfo.interval[i].name + '</td><td>' + taskInfo.interval[i].time + '</td></tr>';
+	}
+	intervalTable += '</table>';
+	document.getElementById("test").innerHTML += intervalTable;
+}
+
 function restoreOptions() {
 	var configData = {};
 	configData[configKey] = false;
@@ -34,6 +43,7 @@ function restoreOptions() {
 		console.log(items);
 		if(items[configKey] !== false) {
 			document.getElementById("test").innerHTML = 'Есть данные по этой задаче.';
+			taskLoadData(items[configKey]);
 		} else {
 			document.getElementById("test").innerHTML = 'По данной задаче данных нет.';
 		}
