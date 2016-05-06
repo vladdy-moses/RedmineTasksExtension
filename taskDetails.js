@@ -36,7 +36,17 @@ function taskLoadData(taskInfo) {
 }
 
 function actionButtonClick() {
-	alert(this.innerHTML);
+	var currentInterval = {
+		issueKey: configKey,
+		name: this.innerHTML,
+		startDate: Date.now()
+	};
+	
+	chrome.storage.sync.set({
+		currentInterval: currentInterval
+	}, function() {
+		alert('Данные успешно сохранены');
+	});
 }
 
 function restoreOptions() {

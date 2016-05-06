@@ -50,15 +50,23 @@ function taskRowClick() {
 	chrome.windows.create(windowProperties);
 }
 
+function printCurrentInterval(interval) {
+	document.getElementById("currentIntervalWrapper").innerHTML = JSON.stringify(interval);
+};
+
 function restoreOptions() {
 	chrome.storage.sync.get({
 		redmineBase: 'http://redmine.ais.local/',
 		redmineProject: 'hm-web',
 		userApiKey: '',
-		userQuery: '97'
+		userQuery: '97',
+		currentInterval: false
 	}, function(items) {
 		localConfig = items;
 		getTasks();
+		if(items.currentInterval !== false) {
+			printCurrentInterval(items.currentInterval);
+		}
 	});
 }
 document.addEventListener('DOMContentLoaded', restoreOptions);
